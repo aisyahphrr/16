@@ -816,34 +816,51 @@ function EndingSection() {
           serta ulang tahun-ulang tahun berikutnya yang akan kita rayakan.
         </p>
 
-        {/* Kolase foto akhir berdampingan (tidak saling menumpuk) */}
-        <div className="flex flex-wrap items-center justify-center gap-4 sm:gap-6 mt-4 w-full max-w-lg">
-          <div
-            className="scrapbook-photo rounded-xl shadow-lg transition-transform duration-300 hover:rotate-0 hover:scale-105"
-            style={{ transform: "rotate(-2deg)" }}
-          >
-            <PhotoPlaceholder
-              src="/kita1.jpeg"
-              objectPosition="center 30%"
-              label="kita 💙"
-              size="normal"
-              className="w-36 h-36 sm:w-44 sm:h-44 rounded-lg"
-            />
-            <p className="text-center text-xs sm:text-sm text-sky-800 font-semibold mt-2">kita 💙</p>
+        {/* Kolase foto akhir 2 baris: Baris 1 -> 2 foto, Baris 2 -> 1 foto */}
+        <div className="flex flex-col items-center gap-4 sm:gap-6 mt-4 w-full max-w-lg">
+          {/* Baris 1: 2 foto */}
+          <div className="flex items-center justify-center gap-3 sm:gap-6 w-full">
+            <div
+              className="scrapbook-photo rounded-xl shadow-lg transition-transform duration-300 hover:rotate-0 hover:scale-105"
+              style={{ transform: "rotate(-2.5deg)" }}
+            >
+              <PhotoPlaceholder
+                src="/kita1.jpeg"
+                objectPosition="center 30%"
+                label="kita 💙"
+                className="w-32 h-32 sm:w-40 sm:h-40 md:w-44 md:h-44 rounded-lg"
+              />
+              <p className="text-center text-xs sm:text-sm text-sky-800 font-semibold mt-2">kita 💙</p>
+            </div>
+
+            <div
+              className="scrapbook-photo rounded-xl shadow-lg transition-transform duration-300 hover:rotate-0 hover:scale-105"
+              style={{ transform: "rotate(2.5deg)" }}
+            >
+              <PhotoPlaceholder
+                src="/kita3.jpeg"
+                objectPosition="center 30%"
+                label="selamanya ✨"
+                className="w-32 h-32 sm:w-40 sm:h-40 md:w-44 md:h-44 rounded-lg"
+              />
+              <p className="text-center text-xs sm:text-sm text-sky-800 font-semibold mt-2">selamanya ✨</p>
+            </div>
           </div>
 
-          <div
-            className="scrapbook-photo rounded-xl shadow-lg transition-transform duration-300 hover:rotate-0 hover:scale-105"
-            style={{ transform: "rotate(2deg)" }}
-          >
-            <PhotoPlaceholder
-              src="/kita3.jpeg"
-              objectPosition="center 30%"
-              label="selamanya ✨"
-              size="normal"
-              className="w-36 h-36 sm:w-44 sm:h-44 rounded-lg"
-            />
-            <p className="text-center text-xs sm:text-sm text-sky-800 font-semibold mt-2">selamanya ✨</p>
+          {/* Baris 2: 1 foto */}
+          <div className="flex items-center justify-center w-full">
+            <div
+              className="scrapbook-photo rounded-xl shadow-lg transition-transform duration-300 hover:rotate-0 hover:scale-105"
+              style={{ transform: "rotate(-1deg)" }}
+            >
+              <PhotoPlaceholder
+                src="/kita4.jpeg"
+                objectPosition="center 30%"
+                label="bahagia selalu 🤍"
+                className="w-36 h-36 sm:w-44 sm:h-44 md:w-48 md:h-48 rounded-lg"
+              />
+              <p className="text-center text-xs sm:text-sm text-sky-800 font-semibold mt-2">bahagia selalu 🤍</p>
+            </div>
           </div>
         </div>
 
