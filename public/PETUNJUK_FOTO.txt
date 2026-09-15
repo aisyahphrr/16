@@ -1,0 +1,5 @@
+# Folder Foto & Aset Musik
+Taruh file foto dan musik Anda di folder ini:
+- hero.jpg (foto utama)
+- foto1.jpg, foto2.jpg, foto3.jpg, dst.
+- lagu.mp3 (opsional musik latar)
