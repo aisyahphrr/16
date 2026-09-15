@@ -668,30 +668,62 @@ function LetterSection({ unlocked }: { unlocked: boolean }) {
               className="text-2xl sm:text-3xl text-sky-700 text-center font-bold"
               style={{ fontFamily: "'Pacifico', cursive" }}
             >
-              Untuk Ahlan Tersayang,
+              Dear Alan,
             </h3>
 
             <div
               className="text-sky-900 text-sm sm:text-base leading-relaxed space-y-4"
               style={{ fontFamily: "'Nunito', sans-serif" }}
             >
+              <p>
+                Kalau kamu sudah sampai di bagian ini, berarti kamu sudah menitipkan satu harapanmu untuk tahun ini. Aku nggak tahu apa yang kamu tulis di sana, tapi aku berharap semoga suatu hari nanti kamu bisa melihat harapan itu menjadi nyata.
+              </p>
+              <p>
+                Aku juga punya beberapa harapan untukmu. Aku berharap kamu selalu punya cukup keberanian untuk mengejar apa yang kamu inginkan, cukup sabar untuk menunggu apa yang belum bisa kamu miliki, dan cukup kuat untuk melewati hari-hari yang tidak selalu mudah.
+              </p>
+              <p>
+                Aku tahu hidup nggak akan selalu berjalan sesuai rencana. Akan ada hari ketika semuanya terasa berat, ketika usaha terasa sia-sia, atau ketika kamu mulai meragukan dirimu sendiri.
+              </p>
+              <p>
+                Kalau suatu hari nanti kamu sampai di sana, aku harap kamu ingat—kamu nggak harus selalu menjadi kuat. Kamu boleh berhenti sebentar. Boleh merasa lelah. Boleh nggak tahu harus ke mana. Dan kalau aku masih diberi kesempatan untuk berjalan di sampingmu, aku ingin menjadi salah satu orang yang mengingatkanmu bahwa kamu sudah sejauh ini.
+              </p>
+              <p>
+                Kita memang baru memulai cerita ini, belum terlalu lama kalau dibandingkan dengan panjangnya waktu yang mungkin masih menunggu kita. Tapi anehnya, dalam waktu yang singkat itu, ada begitu banyak hal kecil tentangmu yang berhasil menjadi bagian dari hari-hariku.
+              </p>
+              <p>
+                Percakapan sederhana. Tawa yang mungkin kamu anggap biasa. Momen-momen kecil yang mungkin akan terlupakan oleh waktu, tapi entah kenapa ingin kusimpan lebih lama.
+              </p>
+              <p>
+                Dan mungkin itu yang paling aku sukai dari kita. Bukan tentang seberapa sempurna semuanya, tapi tentang bagaimana dua orang bisa bertemu, saling mengenal perlahan, lalu memilih untuk tetap tinggal.
+              </p>
+              <p>
+                Jadi, di hari ulang tahunmu ini, aku nggak ingin hanya mengucapkan “semoga bahagia”. Aku ingin kamu benar-benar menemukan kebahagiaan itu. Dalam pekerjaan yang kamu perjuangkan. Dalam mimpi yang sedang kamu kejar. Dalam orang-orang yang menyayangimu. Dalam hal-hal kecil yang sering kali tidak kamu sadari.
+              </p>
+              <p>
+                Dan kalau suatu hari nanti kamu menoleh ke belakang, aku harap kamu bisa tersenyum melihat seberapa jauh kamu sudah berjalan.
+              </p>
+              <p>
+                Terima kasih sudah hadir di hidupku, Alan. Terima kasih untuk semua hal kecil yang mungkin nggak pernah kamu tahu ternyata berarti begitu banyak untukku.
+              </p>
+              <p>
+                Aku nggak tahu seperti apa cerita kita nanti. Tapi untuk sekarang, aku ingin menikmati setiap halaman yang sedang kita tulis. Pelan-pelan saja. Nggak perlu terburu-buru sampai ke akhir. Karena mungkin, bagian paling indah dari sebuah cerita bukan tentang bagaimana akhirnya—tapi tentang siapa yang kita temui dan kenangan apa yang kita buat di sepanjang perjalanan.
+              </p>
               <p className="font-semibold text-sky-800">
-                [TULISKAN SURAT PRIBADIMU DI SINI]
-              </p>
-              <p>
-                Tuliskan pesan tulus dan penuh makna di sini. Ini adalah tempat untuk menyampaikan segala hal yang mungkin jarang terucap langsung — tentang bagaimana kamu selalu membawa tawa, rasa terima kasih atas setiap waktu yang dihabiskan bersama, dan betapa berartinya dirimu.
-              </p>
-              <p>
-                Semoga di usia yang baru ini, langkahmu selalu dipermudah dan hari-harimu senantiasa dipenuhi kebahagiaan serta kedamaian. Surat ini ditulis khusus untukmu dari hati yang paling dalam. 💙
+                Happy birthday, Alan. 🤍<br />
+                Semoga usia yang baru ini membawamu lebih dekat kepada semua hal yang selama ini kamu doakan. Dan semoga, di antara begitu banyak hal baik yang akan datang kepadamu nanti, aku masih boleh menjadi bagian kecil dari cerita itu.
               </p>
             </div>
 
-            <div className="border-t border-sky-100 pt-5 text-right">
+            <div className="border-t border-sky-100 pt-5 flex flex-col gap-1 text-right">
               <p
                 className="text-sky-600 text-lg sm:text-xl font-bold"
                 style={{ fontFamily: "'Pacifico', cursive" }}
               >
-                Selamat Ulang Tahun, sayang. 💙
+                With love, Aisyah. 🤍
+              </p>
+              <p className="text-xs sm:text-sm text-sky-500 italic mt-1">
+                This isn't the end of our story.<br />
+                Pelan-pelan saja. Masih banyak halaman yang belum kita tulis.
               </p>
             </div>
           </div>
@@ -777,7 +809,7 @@ function EndingSection() {
             className="text-sky-400 text-xl sm:text-2xl animate-pulse-soft"
             style={{ fontFamily: "'Pacifico', cursive" }}
           >
-            I love you so much. ♡
+            ILY ♡
           </p>
         </div>
 
@@ -821,7 +853,7 @@ export default function App() {
       if (audio.paused) {
         audio.play().then(() => {
           setPlaying(true);
-        }).catch(() => {});
+        }).catch(() => { });
       }
     };
 
@@ -843,7 +875,7 @@ export default function App() {
     } else {
       audioRef.current.play().then(() => {
         setPlaying(true);
-      }).catch(() => {});
+      }).catch(() => { });
     }
   };
 
@@ -853,7 +885,7 @@ export default function App() {
     if (audioRef.current && audioRef.current.paused) {
       audioRef.current.play().then(() => {
         setPlaying(true);
-      }).catch(() => {});
+      }).catch(() => { });
     }
   };
 
