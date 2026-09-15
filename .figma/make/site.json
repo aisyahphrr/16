@@ -1,7 +1,11 @@
 {
-  "description": "This web application facilitates interactive Q&A sessions, allowing users to ask questions and receive real-time answers, enhancing engagement and knowledge sharing.",
+  "title": "Selamat Ulang Tahun, Alan! 🎂💙",
+  "description": "Ada kado kecil dan pesan spesial untukmu dari Aisyah ✨ Buka sekarang ya!",
+  "openGraph": {
+    "image": "https://alan-bday.vercel.app/alan0.jpeg"
+  },
   "robots": {
-    "index": false
+    "index": true
   },
   "accessibility": {
     "addBypassLinks": false,
