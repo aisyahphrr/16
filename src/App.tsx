@@ -374,6 +374,7 @@ const GALLERY = [
 function WishesSection() {
   const ref1 = useScrollReveal();
   const ref2 = useScrollReveal();
+  const refNote = useScrollReveal();
   const ref3 = useScrollReveal();
   const ref4 = useScrollReveal();
 
@@ -419,7 +420,7 @@ function WishesSection() {
         </div>
 
         {/* Catatan tulus penutup doa */}
-        <div className="scroll-reveal glass-card rounded-3xl p-6 sm:p-8 w-full max-w-xl text-center shadow-lg space-y-4">
+        <div ref={refNote} className="scroll-reveal glass-card rounded-3xl p-6 sm:p-8 w-full max-w-xl text-center shadow-lg space-y-4">
           <p className="text-sm sm:text-base text-sky-800 font-medium leading-relaxed">
             Dan di antara banyak hal yang aku harapkan untukmu, aku hanya ingin satu hal sederhana:
           </p>
