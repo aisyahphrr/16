@@ -312,8 +312,13 @@ function HeroSection() {
         </div>
 
         {/* Ucapan Singkat */}
-        <div className="glass-card rounded-2xl p-5 sm:p-6 text-sm sm:text-base text-sky-800 leading-relaxed font-medium max-w-md shadow-md">
-          Bertambah satu tahun usiamu, bertambah pula alasan untuk bersyukur atas kehadiranmu. Terima kasih sudah menjadi orang yang selalu luar biasa! 🥺💙
+        <div className="glass-card rounded-2xl p-5 sm:p-6 text-sm sm:text-base text-sky-800 leading-relaxed font-medium max-w-md shadow-md text-center space-y-2">
+          <p>
+            Semoga di usia yang baru, langkahmu selalu menemukan jalannya, doa-doamu menemukan jawabannya, dan segala hal baik datang pada waktu yang paling tepat. ✨
+          </p>
+          <p className="text-sky-600 font-semibold text-xs sm:text-sm pt-1 border-t border-sky-100/80">
+            Selamat bertambah usia, Alan. Semoga tahun ini menjadi salah satu bab paling indah dalam hidupmu. 🤍
+          </p>
         </div>
 
         {/* Tombol CTA */}
