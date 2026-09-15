@@ -802,6 +802,8 @@ export default function App() {
     audio.loop = true;
     audioRef.current = audio;
 
+    document.title = "alan bday";
+
     // Coba putar otomatis saat pertama kali dibuka
     const tryAutoplay = () => {
       audio.play().then(() => {
