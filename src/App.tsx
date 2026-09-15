@@ -336,24 +336,24 @@ function HeroSection() {
 
 const WISHES = [
   {
-    icon: "🌟",
-    title: "Mimpi & Cita-Cita",
-    text: "Semoga tahun ini membawa kamu lebih dekat dengan semua mimpi, rencana, dan hal hebat yang sedang kamu perjuangkan.",
-  },
-  {
-    icon: "😊",
-    title: "Kebahagiaan Tiap Hari",
-    text: "Semoga selalu ada alasan untuk tersenyum dan tertawa lepas setiap harinya, baik dari hal kecil maupun pencapaian besarmu.",
+    icon: "🌱",
+    title: "Merasa Cukup",
+    text: "Aku berharap kamu selalu dikelilingi hal-hal yang membuatmu merasa cukup.",
   },
   {
     icon: "💙",
-    title: "Selalu Disayangi",
-    text: "Semoga kamu selalu ingat dan merasakan betapa berharga, disayangi, dan tak tergantikannya kehadiranmu bagi orang sekitar.",
+    title: "Lembut Pada Diri Sendiri",
+    text: "Semoga kamu tidak terlalu keras kepada dirimu sendiri ketika sesuatu tidak berjalan seperti yang kamu inginkan.",
   },
   {
     icon: "✨",
-    title: "Kejutan Manis",
-    text: "Semoga perjalanan setahun ke depan dipenuhi banyak berkah kesehatan, kemudahan, dan kejutan manis yang menyenangkan.",
+    title: "Usaha yang Berbuah Manis",
+    text: "Semoga semua usaha yang selama ini kamu simpan dalam diam perlahan menemukan hasilnya.",
+  },
+  {
+    icon: "😊",
+    title: "Banyak Alasan Tersenyum",
+    text: "Semoga kamu bertemu lebih banyak alasan untuk tersenyum, lebih banyak tempat untuk pulang, dan lebih banyak hari yang membuatmu berpikir: “ternyata, hidup memang seindah ini.”",
   },
 ];
 
@@ -382,17 +382,17 @@ function WishesSection() {
         <Stars count={14} />
       </div>
 
-      <div className="max-w-xl md:max-w-3xl lg:max-w-4xl mx-auto flex flex-col items-center gap-12 sm:gap-14">
+      <div className="max-w-xl md:max-w-3xl lg:max-w-4xl mx-auto flex flex-col items-center gap-10 sm:gap-12">
         {/* Heading Doa */}
         <div ref={ref1} className="scroll-reveal text-center px-4">
           <h2
             className="text-3xl sm:text-4xl md:text-5xl text-sky-700 font-bold"
             style={{ fontFamily: "'Pacifico', cursive" }}
           >
-            Doa & Harapan Untukmu ✨
+            A few things I wish for you... ✨
           </h2>
           <p className="mt-3 text-sky-600 text-sm sm:text-base font-medium">
-            Untuk alan yang sedang ber-ulang tahun
+            Untuk Alan yang sedang ber-ulang tahun
           </p>
         </div>
 
@@ -411,6 +411,20 @@ function WishesSection() {
               </div>
             </div>
           ))}
+        </div>
+
+        {/* Catatan tulus penutup doa */}
+        <div className="scroll-reveal glass-card rounded-3xl p-6 sm:p-8 w-full max-w-xl text-center shadow-lg space-y-4">
+          <p className="text-sm sm:text-base text-sky-800 font-medium leading-relaxed">
+            Dan di antara banyak hal yang aku harapkan untukmu, aku hanya ingin satu hal sederhana:
+          </p>
+          <p className="text-base sm:text-lg text-sky-700 font-bold leading-relaxed px-2">
+            “Semoga kamu selalu menjadi Alan yang aku kenal—dengan segala baik, kurang, jatuh, bangun, dan segala hal yang membuatmu menjadi dirimu sendiri.” 💙
+          </p>
+          <div className="border-t border-sky-100 pt-3 text-xs sm:text-sm text-sky-600 italic leading-relaxed">
+            Aku mungkin belum tahu akan sejauh apa langkah kita nanti.<br />
+            Tapi untuk hari ini, aku senang pernah dipertemukan denganmu. Dan aku berharap, kita masih punya banyak cerita untuk ditulis bersama. ✨
+          </div>
         </div>
 
         {/* Gallery heading */}
