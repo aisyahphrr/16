@@ -363,12 +363,42 @@ const WISHES = [
 ];
 
 const GALLERY = [
-  { rotate: "-3deg", src: "/alan1.jpeg", position: "center 50%", label: "senyum manis gigi✨", size: "w-36 h-36 sm:w-44 sm:h-44", mt: "0" },
-  { rotate: "2deg", src: "/alan2.jpeg", position: "center 45%", label: "si paling metal🤘😆", size: "w-32 h-32 sm:w-40 sm:h-40", mt: "16px" },
-  { rotate: "-1deg", src: "/alan3.jpeg", position: "center 88%", label: "OwWW anak laut bruh🚤👍", size: "w-36 h-44 sm:w-48 sm:h-52", mt: "0" },
-  { rotate: "3deg", src: "/alan4.jpeg", position: "center 75%", label: "ini sebenernya ngapain sih😝", size: "w-32 h-32 sm:w-40 sm:h-40", mt: "20px" },
-  { rotate: "-2deg", src: "/alan5.jpeg", position: "center 40%", label: "aura anak sholeh☀️😇", size: "w-32 h-36 sm:w-40 sm:h-44", mt: "0" },
-  { rotate: "1.5deg", src: "/alan6.jpeg", position: "center 75%", label: "my favorit driver🚗😎", size: "w-36 h-36 sm:w-44 sm:h-44", mt: "12px" },
+  {
+    rotate: "-2.5deg",
+    src: "/alan1.jpeg",
+    position: "center 50%",
+    label: "senyum manis\ngigi ✨",
+  },
+  {
+    rotate: "2deg",
+    src: "/alan2.jpeg",
+    position: "center 45%",
+    label: "si paling\nmetal 🤘😆",
+  },
+  {
+    rotate: "-1.5deg",
+    src: "/alan3.jpeg",
+    position: "center 88%",
+    label: "OwWW anak laut\nbruh 🚤👍",
+  },
+  {
+    rotate: "2.5deg",
+    src: "/alan4.jpeg",
+    position: "center 75%",
+    label: "ini sebenernya\nngapain sih 😝",
+  },
+  {
+    rotate: "-2deg",
+    src: "/alan5.jpeg",
+    position: "center 40%",
+    label: "aura anak\nsholeh ☀️😇",
+  },
+  {
+    rotate: "1.5deg",
+    src: "/alan6.jpeg",
+    position: "center 75%",
+    label: "my favorit\ndriver 🚗😎",
+  },
 ];
 
 function WishesSection() {
@@ -446,26 +476,25 @@ function WishesSection() {
           </p>
         </div>
 
-        {/* Scrapbook gallery */}
-        <div className="scroll-reveal w-full" ref={ref4}>
-          <div className="flex flex-wrap justify-center items-center gap-4 sm:gap-6 md:gap-8">
+        {/* Scrapbook gallery: Pasti 2 Kolom x 3 Baris di Mobile, 3 Kolom di Desktop */}
+        <div className="scroll-reveal w-full max-w-sm sm:max-w-xl md:max-w-3xl mx-auto" ref={ref4}>
+          <div className="grid grid-cols-2 md:grid-cols-3 gap-3 sm:gap-6 justify-items-center">
             {GALLERY.map((g, i) => (
               <div
                 key={i}
-                className="scrapbook-photo rounded-xl relative transition-all duration-300 hover:rotate-0 hover:scale-105 hover:z-20 cursor-pointer"
+                className="scrapbook-photo rounded-xl relative w-full max-w-[165px] sm:max-w-[210px] transition-all duration-300 hover:rotate-0 hover:scale-105 hover:z-20 cursor-pointer"
                 style={{
                   transform: `rotate(${g.rotate})`,
-                  marginTop: g.mt,
                 }}
               >
                 <PhotoPlaceholder
                   src={g.src}
                   objectPosition={g.position || "center"}
                   label=""
-                  className={`${g.size} rounded-lg`}
+                  className="w-full aspect-square sm:aspect-[4/5] rounded-lg"
                   style={{ border: "none" }}
                 />
-                <p className="text-center text-xs sm:text-sm text-sky-800 font-semibold mt-2 px-1">
+                <p className="text-center text-[11px] sm:text-xs md:text-sm text-sky-800 font-semibold mt-2 px-1 min-h-[2.5rem] flex items-center justify-center leading-snug whitespace-pre-line text-balance">
                   {g.label}
                 </p>
                 {/* Decorative stickers */}
