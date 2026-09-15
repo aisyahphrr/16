@@ -1,4 +1,40 @@
 import { useState, useEffect, useRef, useCallback } from "react";
+import confetti from "canvas-confetti";
+
+export function triggerConfetti() {
+  confetti({
+    particleCount: 80,
+    spread: 70,
+    origin: { y: 0.6 },
+    colors: ["#38bdf8", "#60a5fa", "#93c5fd", "#fef08a", "#ffffff"],
+  });
+}
+
+export function triggerBigConfetti() {
+  const duration = 2.5 * 1000;
+  const end = Date.now() + duration;
+
+  (function frame() {
+    confetti({
+      particleCount: 4,
+      angle: 60,
+      spread: 60,
+      origin: { x: 0 },
+      colors: ["#38bdf8", "#60a5fa", "#3b82f6", "#fef08a", "#bae6fd"],
+    });
+    confetti({
+      particleCount: 4,
+      angle: 120,
+      spread: 60,
+      origin: { x: 1 },
+      colors: ["#38bdf8", "#60a5fa", "#3b82f6", "#fef08a", "#bae6fd"],
+    });
+
+    if (Date.now() < end) {
+      requestAnimationFrame(frame);
+    }
+  })();
+}
 
 // ─── Decorative helpers ───────────────────────────────────────────────────────
 
@@ -548,26 +584,24 @@ function WishSection({ onWishSaved }: { onWishSaved: () => void }) {
 
     // Kirim langsung ke email Aisyah
     try {
+      const formData = new FormData();
+      formData.append("name", "Ahlan Purba (Alan)");
+      formData.append("email", "aisyahputriharmelia@gmail.com");
+      formData.append("harapan_alan", state.text);
+      formData.append("waktu", new Date().toLocaleString("id-ID", { timeZone: "Asia/Jakarta" }));
+      formData.append("_subject", "💙 Harapan Ulang Tahun ke-21 dari Alan!");
+      formData.append("_captcha", "false");
+      formData.append("_template", "table");
+
       await fetch("https://formsubmit.co/ajax/aisyahputriharmelia@gmail.com", {
         method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-          Accept: "application/json",
-        },
-        body: JSON.stringify({
-          _subject: "💙 Harapan Ulang Tahun ke-21 dari Alan!",
-          Nama: "Ahlan Purba (Alan)",
-          "Ulang Tahun Ke": "21 Tahun (16 September)",
-          "Isi Harapan / Doa": state.text,
-          "Dikirim Pada": new Date().toLocaleString("id-ID", { timeZone: "Asia/Jakarta" }),
-          _template: "table",
-          _captcha: "false",
-        }),
+        body: formData,
       });
     } catch (e) {
       console.error("Gagal mengirim ke email:", e);
     }
 
+    triggerBigConfetti();
     setState((s) => ({ ...s, saving: false, saved: true }));
     onWishSaved();
   };
@@ -626,6 +660,16 @@ function WishSection({ onWishSaved }: { onWishSaved: () => void }) {
               <p className="text-xs text-sky-500 font-bold uppercase tracking-wider mb-1">Harapanmu:</p>
               <p className="text-sky-800 text-sm sm:text-base font-medium italic">"{state.text}"</p>
             </div>
+            <a
+              href={`https://wa.me/?text=${encodeURIComponent(
+                `Hai Aisyah, ini harapanku di ulang tahun ke-21: "${state.text}" 💙`
+              )}`}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="mt-2 w-full py-3 px-4 rounded-2xl font-bold text-sky-700 bg-sky-100/90 hover:bg-sky-200 border border-sky-300 text-xs sm:text-sm flex items-center justify-center gap-2 transition-all hover:scale-[1.02] shadow-sm"
+            >
+              <span>💬</span> Kirim salinan ke WhatsApp Aisyah
+            </a>
           </div>
         ) : (
           <div className="glass-card rounded-3xl p-6 sm:p-8 w-full flex flex-col gap-4 text-left shadow-lg">
@@ -714,7 +758,10 @@ function LetterSection({ unlocked }: { unlocked: boolean }) {
             <p className="text-sky-700 font-bold text-base sm:text-lg">Kunci telah terbuka!</p>
             <p className="text-sky-600 text-sm font-medium">Surat spesial ini siap untuk kamu baca.</p>
             <button
-              onClick={() => setOpened(true)}
+              onClick={() => {
+                triggerConfetti();
+                setOpened(true);
+              }}
               className="mt-2 w-full py-3.5 sm:py-4 rounded-2xl font-bold text-white text-sm sm:text-base transition-all duration-200 hover:scale-105 active:scale-95 cursor-pointer shadow-lg"
               style={{
                 background: "linear-gradient(135deg, #818cf8, #38bdf8)",
@@ -973,6 +1020,7 @@ export default function App() {
   };
 
   const handleEnter = () => {
+    triggerBigConfetti();
     setEntered(true);
     // Pastikan musik menyala saat user menekan 'MAU DONG'
     if (audioRef.current && audioRef.current.paused) {
