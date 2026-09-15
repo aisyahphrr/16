@@ -538,8 +538,35 @@ function WishSection({ onWishSaved }: { onWishSaved: () => void }) {
     }
     setState((s) => ({ ...s, saving: true, error: "" }));
 
-    // Simulasi penyimpanan (bisa diintegrasikan ke backend / fetch API)
-    await new Promise((res) => setTimeout(res, 1200));
+    // Simpan ke LocalStorage sebagai cadangan di browser
+    try {
+      localStorage.setItem("alan_birthday_wish", state.text);
+      localStorage.setItem("alan_wish_timestamp", new Date().toISOString());
+    } catch {
+      // ignore
+    }
+
+    // Kirim langsung ke email Aisyah
+    try {
+      await fetch("https://formsubmit.co/ajax/aisyahputriharmelia@gmail.com", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          Accept: "application/json",
+        },
+        body: JSON.stringify({
+          _subject: "💙 Harapan Ulang Tahun ke-21 dari Alan!",
+          Nama: "Ahlan Purba (Alan)",
+          "Ulang Tahun Ke": "21 Tahun (16 September)",
+          "Isi Harapan / Doa": state.text,
+          "Dikirim Pada": new Date().toLocaleString("id-ID", { timeZone: "Asia/Jakarta" }),
+          _template: "table",
+          _captcha: "false",
+        }),
+      });
+    } catch (e) {
+      console.error("Gagal mengirim ke email:", e);
+    }
 
     setState((s) => ({ ...s, saving: false, saved: true }));
     onWishSaved();
