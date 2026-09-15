@@ -519,7 +519,7 @@ function WishSection({ onWishSaved }: { onWishSaved: () => void }) {
           <div className="relative w-28 h-28 sm:w-32 sm:h-32 rounded-full p-1.5 bg-gradient-to-tr from-sky-400 via-blue-300 to-indigo-400 shadow-xl animate-float">
             <div className="w-full h-full rounded-full overflow-hidden border-2 border-white shadow-inner bg-sky-100">
               <img
-                src="/alan kecil.jpeg"
+                src="/alan-kecil.jpeg"
                 alt="Alan Kecil"
                 className="w-full h-full object-cover transition-transform duration-500 hover:scale-110"
                 style={{ objectPosition: "center 20%" }}
